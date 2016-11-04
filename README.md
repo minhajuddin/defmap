@@ -7,7 +7,7 @@ lookups.
 
 ```elixir
 defmodule HttpStatusMessages do
-  use MapCompiler, [ map: %{
+  use Defmap, [ map: %{
                        400 => "Bad Request",
                        401 => "Unauthorized",
                        403 => "Forbidden",

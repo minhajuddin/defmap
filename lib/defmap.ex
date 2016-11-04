@@ -3,7 +3,7 @@ defmodule Defmap do
   defmacro __using__(opts) do
     map = Keyword.fetch! opts, :map
     quote do
-      import MapCompiler, only: [compile: 1]
+      import Defmap, only: [compile: 1]
       compile unquote(map)
     end
   end
