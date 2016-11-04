@@ -1,8 +1,12 @@
 defmodule Defmap.Mixfile do
   use Mix.Project
+  @description  "Embed your map into a module for easier/faster lookup"
 
   def project do
     [app: :defmap,
+     name: "defmap",
+     description: @description,
+     package: package,
      version: "0.1.0",
      elixir: "~> 1.3",
      build_embedded: Mix.env == :prod,
@@ -28,5 +32,13 @@ defmodule Defmap.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     []
+  end
+
+  defp package do
+    [description: @description,
+     files: ["lib", "config", "mix.exs", "README.md"],
+     maintainers: ["Khaja Minhajuddin"],
+     licenses: ["MIT"],
+     links: %{github: "https://github.com/minhajuddin/defmap"}]
   end
 end

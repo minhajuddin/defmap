@@ -1,10 +1,26 @@
-# Defmap
+# defmap
 
-**TODO: Add description**
+Defmap is a utility which allows you to embed a map into a module for faster/easier
+lookups.
+
+## Usage
+
+```elixir
+defmodule HttpStatusMessages do
+  use MapCompiler, [ map: %{
+                       400 => "Bad Request",
+                       401 => "Unauthorized",
+                       403 => "Forbidden",
+                     }]
+end
+
+IO.inspect HttpStatusMessages.get(401) # => {:ok, "Unauthorized"}
+IO.inspect HttpStatusMessages.get(3)   # => :error
+```
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
+The package can be installed as:
 
   1. Add `defmap` to your list of dependencies in `mix.exs`:
 
@@ -21,4 +37,3 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
       [applications: [:defmap]]
     end
     ```
-
