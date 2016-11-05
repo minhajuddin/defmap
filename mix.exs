@@ -4,7 +4,7 @@ defmodule Defmap.Mixfile do
 
   def project do
     [app: :defmap,
-     name: "defmap",
+     name: "Defmap",
      description: @description,
      package: package,
      version: "0.1.1",
