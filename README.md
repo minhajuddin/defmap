@@ -61,6 +61,32 @@ IO.inspect HttpStatusMessages.get_detailed_info(401) # => {:ok,  "Bad Request, h
 IO.inspect HttpStatusMessages.get_detailed_info(3)   # => :error
 ```
 
+### Use a CSV file to store the map and then embed it at compile time
+
+Contents of `./http_statuses.csv`
+```csv
+417, Expectation Failed
+500, Internal Server Error
+205, Reset Content
+...
+```
+
+```elixir
+defmodule HttpStatuses do
+    use Defmap, map: (File.stream!(Path.expand(Path.join(__DIR__, "./http_statuses.csv")))
+                      |> CSV.decode
+                      |> Enum.reject(& length(&1) != 2)
+                      |> Enum.map(fn [k, v] -> {String.to_integer(k), String.strip(v)} end)
+                      |> Enum.into(%{})),
+  func_name: :get_status
+end
+
+IO.inspect HttpStatusMessages.get_status(401) # => {:ok, "Unauthorized"}
+IO.inspect HttpStatusMessages.get_status(3)   # => :error
+
+```
+
+
 
 ## Installation
 

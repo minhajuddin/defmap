@@ -1,0 +1,40 @@
+417, Expectation Failed
+500, Internal Server Error
+205, Reset Content
+410, Gone
+404, Not Found
+303, See Other
+503, Service Unavailable
+305, Use Proxy
+307, Temporary Redirect
+202, Accepted
+501, Not Implemented
+502, Bad Gateway
+409, Conflict
+302, Found
+416, Requested Range Not Satisfiable
+400, Bad Request
+408, Request Timeout
+300, Multiple Choices
+304, Not Modified
+201, Created
+204, No Content
+412, Precondition Failed
+402, Payment Required
+406, Not Acceptable
+101, Switching Protocols
+200, OK
+203, Non-Authoritative Information
+414, Request-URI Too Long
+403, Forbidden
+100, Continue
+301, Moved Permanently
+413, Request Entity Too Large
+206, Partial Content
+407, Proxy Authentication Required
+401, Unauthorized
+405, Method Not Allowed
+411, Length Required
+505, HTTP Version Not Supported
+504, Gateway Timeout
+415, Unsupported Media Type

@@ -1,0 +1,13 @@
+session "defmap"
+directory "/home/minhajuddin/os/defmap"
+
+window "src", [
+  pane("vim TODO"),
+]
+
+window "iex", [
+  pane("iex -S mix"),
+  pane("git status", :vertical),
+]
+
+# vim: filetype=ruby

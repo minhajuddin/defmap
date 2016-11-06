@@ -10,9 +10,8 @@ defmodule Defmap do
 
   @doc false
   defmacro compile(opts) do
-
-    # map is turned into its AST in the macro
-    {_, _, map} = Keyword.fetch!(opts, :map)
+    {opts, _binding} = Code.eval_quoted(opts, [], __CALLER__)
+    map = Keyword.fetch!(opts, :map)
     func_name = opts[:func_name] || :get
 
     catch_all = quote do
