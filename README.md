@@ -94,16 +94,16 @@ The package can be installed as:
 
   1. Add `defmap` to your list of dependencies in `mix.exs`:
 
-    ```elixir
-    def deps do
-      [{:defmap, "~> 0.1.0"}]
-    end
-    ```
+```elixir
+def deps do
+  [{:defmap, "~> 0.1.0"}]
+end
+```
 
   2. Ensure `defmap` is started before your application:
 
-    ```elixir
-    def application do
-      [applications: [:defmap]]
-    end
-    ```
+```elixir
+def application do
+  [applications: [:defmap]]
+end
+```
